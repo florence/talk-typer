@@ -57,8 +57,7 @@
          (if (send delegate insert-mode?) off-delegate input-delegate)))
 
       (define/public-final (talk-typer-load-buffer!)
-        (define path (finder:get-file #f "Select TalkType Source File"))
-        (and path (send delegate get-buffer! path)))
+        (send delegate get-buffer!))
 
       ;; ==== local methods ====
       (define/public (super-on-local-char event)
