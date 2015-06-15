@@ -60,6 +60,7 @@
         (define path (finder:get-file #f "Select TalkType Source File"))
         (and path (send delegate get-buffer! path)))
 
+      ;; ==== local methods ====
       (define/public (super-on-local-char event)
         (super on-local-char event))
       ;; ==== overrides ====
@@ -127,6 +128,10 @@
     (define (do-key event)
       (case (send event get-key-code)
         ;; todo backspace
+        [(#\backspace)
+         (prev-char!)
+         (send sup super-on-local-char event)]
+        [(release) (void)]
         [else (insert-chars!)]))
 
     (define (insert-chars!)
