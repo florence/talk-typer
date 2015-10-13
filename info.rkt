@@ -9,3 +9,5 @@
 
 (define deps '("base" "gui-lib" "data-lib" "drracket-plugin-lib"))
 (define single-collection "talk-typer")
+
+(define verion "0.1")
