@@ -130,6 +130,8 @@
         [(#\backspace)
          (prev-char!)
          (send sup super-on-local-char event)]
+        [(up down left right)
+         (send sup super-on-local-char event)]
         [(release) (void)]
         [else (insert-chars!)]))
 
